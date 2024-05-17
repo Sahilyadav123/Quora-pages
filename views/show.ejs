@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+h2 {
+    color: maroon;
+}
+
+h3 {
+    color: #666;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.user {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content {
+    color: #444;
+    line-height: 1.6;
+}
+
+    </style>
+</head>
+
+<body>
+    <h2>Quora</h2>
+    <h3>Here is your post in detail....</h3>
+    <p>PostId:<%= post.id %>
+    </p>
+    <div class="post">
+        <h3 class="user">@<%= post.username  %></h3>
+        <h4 class="content"><%= post.content%></h4>
+    </div>
+
+</body>
+
+</html>

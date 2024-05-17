@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit-Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #16213e; /* Dark blue background color */
+            color: #fff; /* White text color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #1a1a2e; /* Darker blue container background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            background-color: #273547; /* Dark blue text area background */
+            color: #fff; /* White text color */
+            border-radius: 5px;
+            resize: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+             
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            /* ackground: ; */
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            
+            color: black;
+             /* Button gradient on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit your post</h2>
+        <p>Post id: <%= post.id %></p>
+        <p>Post username: <%= post.username %></p>
+        <form action="/posts/<%= post.id %>?_method=PATCH" method="post">
+            <textarea  name="content" cols="30" rows="10" placeholder="Enter updated content"><%=post.content %></textarea>
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</body>
+</html>
