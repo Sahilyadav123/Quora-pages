@@ -35,6 +35,10 @@ let posts=[
     }
 ]
 
+app.use('/', (req ,res) => {
+    res.status(200).send('Hello World !')
+})
+
 //! to view all the post
 app.get('/posts',(req,res)=>{
     res.render("index.ejs",{posts})
